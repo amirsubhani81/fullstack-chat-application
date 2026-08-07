@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
-  namespace: chat-app
+  name: chatapp-backend-deployment
+  namespace: chatapp-namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: chatapp-backend
   template:
     metadata:
       labels:
-        app: backend
+        app: chatapp-backend
     spec:
       containers:
-      - name: backend
-        image: iemafzal/backend:v1
+      - name: chatapp-backend-container
+        image: aamir977/chatapp-backend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5001

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-config
-  namespace: chat-app
+  namespace: chatapp-namespace
 data:
   nginx.conf: |
     server {

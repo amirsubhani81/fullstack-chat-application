@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
-  namespace: chat-app
+  name: chatapp-frontend-deployment
+  namespace: chatapp-namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: chatapp-frontend
   template:
     metadata:
       labels:
-        app: frontend
+        app: chatapp-frontend
     spec:
       containers:
-      - name: frontend
-        image: iemafzal/frontend:v1
+      - name: chatapp-frontend-container
+        image: aamir977/chatapp-frontend
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

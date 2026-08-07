@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mongodb
-  namespace: chat-app
+  namespace: chatapp-service
 spec:
   selector:
-    app: mongodb
+    app: chatapp-mongodb
   ports:
     - protocol: TCP
       port: 27017

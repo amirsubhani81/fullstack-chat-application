@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb
-  namespace: chat-app
+  name: chatapp-mongodb-deployment
+  namespace: chatapp-namespace
 spec:
   replicas: 1
   selector:
@@ -14,8 +14,8 @@ spec:
         app: mongodb
     spec:
       containers:
-      - name: mongodb
-        image: iemafzal/mongodb:v1
+      - name: chatapp-mongodb-container
+        image: aamir077/mongodb:latest
         ports:
         - containerPort: 27017
         env:

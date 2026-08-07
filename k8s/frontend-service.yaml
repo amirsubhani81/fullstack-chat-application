@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
-  namespace: chat-app
+  name: chatapp-frontend-service
+  namespace: chatapp-namespace
 spec:
   selector:
-    app: frontend
+    app: chatapp-frontend
   ports:
     - protocol: TCP
       port: 80
