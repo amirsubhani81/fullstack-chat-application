@@ -3,6 +3,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    image: aamir977/chat-app-frontend
+    container_name: chat-app-frontend-container
     ports:
       - "8080:80"
     depends_on:
@@ -17,6 +19,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    image: aamir977/chat-app-backend
+    container_name: chat-app-backend-container
     ports:
       - "5001:5001"
     depends_on:
