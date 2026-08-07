@@ -3,8 +3,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: aamir977/chat-app-frontend
-    container_name: chat-app-frontend-container
+    image: aamir977/chatapp-frontend
+    container_name: chatapp-frontend-container
     ports:
       - "8080:80"
     depends_on:
@@ -19,8 +19,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: aamir977/chat-app-backend
-    container_name: chat-app-backend-container
+    image: aamir977/chatapp-backend
+    container_name: chatapp-backend-container
     ports:
       - "5001:5001"
     depends_on:
@@ -33,12 +33,13 @@ services:
 
   mongo:
     image: mongo:latest
+    container_name: chatapp-mongodb-container
     ports:
       - "27017:27017"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=admin
-    volumes:
+    volumes:  
       - mongodb_data:/data/db
     networks:
       - chat-network

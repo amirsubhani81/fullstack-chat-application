@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: chatapp-mongodb-container
-        image: aamir077/mongodb:latest
+        image: mongo:latest
         ports:
         - containerPort: 27017
         env:
@@ -29,4 +29,4 @@ spec:
       volumes:
       - name: mongo-data
         persistentVolumeClaim:
-          claimName: mongo-pvc
+          claimName: chatapp-mongo-pvc
